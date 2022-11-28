@@ -1,6 +1,8 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -19,9 +21,7 @@ module.exports = {
           {
             loader: "babel-loader",
             options: {
-              presets: [
-                ["@babel/preset-env", { targets: "> 0.25%, not dead" }],
-              ],
+              presets: [["@babel/preset-env", { targets: "> 0.25%, not dead" }]],
             },
           },
         ],
@@ -43,12 +43,40 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)/,
+        // 追加
+        type: "asset/resource",
+        generator: {
+          filename: "images/[name][ext]",
+        },
+      },
     ],
   },
 
   plugins: [
     new MiniCssExtractPlugin({
       filename: "./css/style.css",
+    }),
+    new CopyPlugin({
+      patterns: [{ from: "src/images", to: "images" }],
+    }),
+    new ImageMinimizerPlugin({
+      test: /\.(png|jpe?g)$/i,
+      minimizer: {
+        implementation: ImageMinimizerPlugin.squooshMinify,
+        options: {
+          encodeOptions: {
+            mozjpeg: {
+              quality: 85,
+            },
+            oxipng: {
+              level: 3,
+              interlace: false,
+            },
+          },
+        },
+      },
     }),
     new CleanWebpackPlugin(),
   ],
