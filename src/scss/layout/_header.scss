@@ -1,0 +1,19 @@
+@use "../global" as global;
+.l-header {
+  @include global.mq('md') {
+    
+  }
+}
+
+.l-header__inner {
+  @include global.mq('md') {
+    
+  }
+}
+
+.l-header__logo {
+  @include global.mq('md') {
+    
+  }
+}
+

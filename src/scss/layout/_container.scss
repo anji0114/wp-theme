@@ -1,0 +1,10 @@
+@use "../global" as global;
+
+.l-container {
+  margin: 0 auto;
+
+  @include global.mq("md") {
+    padding: 0 30px;
+    max-width: 1060px;
+  }
+}

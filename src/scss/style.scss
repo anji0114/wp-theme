@@ -1,3 +1,22 @@
-body {
-  background-color: aquamarine;
-}
+// foundation
+@use "./foundation/reset";
+@use "./foundation/base";
+
+// layout
+@use "./layout/archive";
+@use "./layout/container";
+@use "./layout/footer";
+@use "./layout/header";
+@use "./layout/single";
+
+// object component
+@use "./object/component/button";
+@use "./object/component/heading";
+
+// object project
+@use "./object/project/about";
+@use "./object/project/home";
+@use "./object/project/news";
+@use "./object/project/service";
+
+// object utility
