@@ -1,8 +1,23 @@
 # wp-theme
+webpackを使ったWordPress開発のテンプレート
 
 ## Flocss設計
 
 ## 環境
-webpack
+* webpack 5
+* node.js 16系
 
-node.js
+## 
+初期設定
+```
+
+$ npm install
+
+```
+
+サーバー起動
+```
+
+$ npm run start
+
+```
