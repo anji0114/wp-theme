@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -58,6 +59,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "./css/style.css",
     }),
+    new BrowserSyncPlugin({
+      host: "localhost",
+      port: 3000,
+      proxy: "URL",
+    }),
+
     new CopyPlugin({
       patterns: [{ from: "src/images", to: "images" }],
     }),
