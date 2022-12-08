@@ -25,12 +25,12 @@ new BrowserSyncPlugin({
 
 ## コマンド
 
-## サーバー起動
+### サーバー起動
 ```
 $ npm run start
 ```
 
-ビルド
+### ビルド
 ```
 $ npm run build
 ```
