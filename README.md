@@ -7,30 +7,30 @@ webpackを使ったWordPress開発のテンプレート
 * webpack 5
 * node.js 16系
 
-## 
-初期設定
-```
+## 初期設定
 
+### npm install
+```
 $ npm install
-
 ```
 
-webpack.config.js
+### webpack.config.js
 ```
-
 new BrowserSyncPlugin({
   host: "localhost",
   port: 3000,
   proxy: "URL", ←wordpress local環境のurlを指定
 }),
-
 ```
 
+## コマンド
 
-サーバー起動
+## サーバー起動
 ```
 $ npm run start
 ```
 
 ビルド
+```
+$ npm run build
 ```
