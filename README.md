@@ -15,9 +15,22 @@ $ npm install
 
 ```
 
-サーバー起動
+webpack.config.js
 ```
 
-$ npm run start
+new BrowserSyncPlugin({
+  host: "localhost",
+  port: 3000,
+  proxy: "URL", ←wordpress local環境のurlを指定
+}),
 
+```
+
+
+サーバー起動
+```
+$ npm run start
+```
+
+ビルド
 ```
