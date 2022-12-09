@@ -1,0 +1,13 @@
+@use "../../global" as global;
+
+/*--------- c-button01 ---------*/
+.c-button01 {
+  @include global.mq("md") {
+  }
+}
+
+/*--------- c-button02 ---------*/
+.c-button02 {
+  @include global.mq("md") {
+  }
+}

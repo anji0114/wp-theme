@@ -1,0 +1,6 @@
+@use "../../global" as global;
+/*--------- c-heading01 ---------*/
+.c-heading01 {
+  @include global.mq("md") {
+  }
+}

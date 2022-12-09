@@ -1,3 +1,12 @@
+@use "../global" as global;
+
 body {
-  
+  font-weight: 400;
+  font-family: global.$font-ja;
+}
+
+@include global.mq("lg") {
+  a[href^="tel:"] {
+    pointer-events: none;
+  }
 }

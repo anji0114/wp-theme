@@ -1,0 +1,25 @@
+@use "../../global" as global;
+
+.is--sp {
+  @include global.mq("md") {
+    display: none;
+  }
+}
+
+.is--sp-tab {
+  @include global.mq("lg") {
+    display: none;
+  }
+}
+
+.is--tab-pc {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.is--pc {
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
